@@ -23,7 +23,25 @@ export const frequencyEvents = [
   {
     freq: 4.21,
     type: "letter",
-    tolerance: 0.01,
+    tolerance: 0.02,
     displayType: "letterButton"
   }
+  {
+    freq: 5.21,
+    type: "image",
+    tolerance: 0.05,
+    src: "/assets/freq-5.21.jpg"
+  },
+  {
+    freq: 8.08,
+    type: "image",
+    tolerance: 0.05,
+    src: "/assets/freq-8.08.jpg"
+  },
+  {
+    freq: 10.00,
+    type: "image",
+    tolerance: 0.05,
+    src: "/assets/freq-10.00.jpg"
+  },
 ];
