@@ -55,5 +55,5 @@ export const frequencyEvents = [
     type: "image",
     tolerance: 0.05,
     src: "/assets/freq-7.05.jpg"
-  },
+  }
 ];
