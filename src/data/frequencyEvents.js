@@ -18,14 +18,6 @@ export const frequencyEvents = [
     tolerance: 0.05,
     src: "/assets/freq-12.21.jpg"
   },
-
-  // 保留原有的 4.21Hz 信封事件
-  {
-    freq: 4.21,
-    type: "letter",
-    tolerance: 0.02,
-    displayType: "letterButton"
-  },
   {
     freq: 5.21,
     type: "image",
@@ -55,5 +47,12 @@ export const frequencyEvents = [
     type: "image",
     tolerance: 0.05,
     src: "/assets/freq-7.05.jpg"
+  },
+    // 保留原有的 4.21Hz 信封事件
+  {
+    freq: 4.21,
+    type: "letter",
+    tolerance: 0.02,
+    displayType: "letterButton"
   }
 ];
