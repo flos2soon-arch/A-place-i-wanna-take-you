@@ -173,7 +173,7 @@ const EnhancedGlobe = ({ onCityClick }: EnhancedGlobeProps) => {
 
           {/* 城市名称标签 */}
           <Text
-            position={[city.vector.x * 1.15, city.vector.y * 1.15, city.vector.z * 1.05]}
+            position={[city.vector.x * 1.03, city.vector.y * 1.15, city.vector.z * 1.05]}
             fontSize={0.05}
             color={hoveredCity === city.name ? "#ffffff" : "#e8c2ff"}
             anchorX="center"
