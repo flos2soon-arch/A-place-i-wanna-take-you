@@ -1,0 +1,164 @@
+.letter-scene {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.letter-back-button {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.letter-back-button:hover {
+  color: #fff;
+  transform: translateX(-5px);
+}
+
+.letter-container {
+  position: relative;
+  width: 1200px;
+  max-width: 95vw;
+  padding: 50px;
+}
+
+.letter-paper {
+  background: rgba(20, 20, 20, 0.9);
+  padding: 70px 60px;
+  border-radius: 5px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  position: relative;
+  backdrop-filter: blur(5px);
+}
+
+.letter-line {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 15px;
+  line-height: 2;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  font-style: italic;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.letter-line.empty {
+  height: 16px;
+  margin-bottom: 16px;
+}
+
+.letter-signature {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 18px;
+  color: #ffb6c1;
+  text-align: right;
+  margin-top: 40px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 182, 193, 0.3);
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.envelope-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.envelope-pattern {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 182, 193, 0.02) 10px,
+    rgba(255, 182, 193, 0.02) 20px
+  );
+}
+
+.letter-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle,
+    rgba(100, 181, 246, 0.1) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: -1;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .letter-container {
+    padding: 30px;
+  }
+
+  .letter-paper {
+    padding: 50px 40px;
+  }
+
+  .letter-line {
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .letter-signature {
+    font-size: 18px;
+  }
+
+  .letter-back-button {
+    top: 20px;
+    left: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .letter-paper {
+    padding: 40px 25px;
+  }
+
+  .letter-line {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+
+  .letter-line.empty {
+    height: 14px;
+    margin-bottom: 14px;
+  }
+
+  .letter-signature {
+    font-size: 16px;
+    margin-top: 35px;
+  }
+}

@@ -1,0 +1,409 @@
+.radio-tuner {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  background: rgba(10, 10, 10, 0);
+  backdrop-filter: blur(7px);
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid rgba(255, 182, 193, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  pointer-events: auto;
+}
+
+.radio-display {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.frequency-value {
+  font-size: 32px;
+  font-weight: 300;
+  color: #ffbdf6;
+  text-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+}
+
+.frequency-unit {
+  font-size: 14px;
+  color: #888;
+  margin-left: 8px;
+}
+
+.waveform {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.wave-bar {
+  width: 4px;
+  background: linear-gradient(to top, #f5b6ff, rgba(255, 182, 193, 0.3));
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  animation: wave 1s ease-in-out infinite;
+}
+
+.wave-bar.active {
+  background: linear-gradient(to top, #fff, #e8b6ff);
+  box-shadow: 0 0 10px rgba(238, 182, 255, 0.8);
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.3);
+  }
+}
+
+.frequency-slider {
+  position: relative;
+}
+
+.slider {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #dfb6ff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.8);
+  transition: all 0.3s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px rgb(237, 182, 255);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #f3b6ff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(236, 182, 255, 0.8);
+  border: none;
+}
+
+.frequency-marks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 10px;
+  color: #666;
+}
+
+.letter-indicator {
+  position: absolute;
+  top: -30px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 182, 193, 0.2);
+  border: 2px solid #ffb6c1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 182, 193, 0.8);
+  }
+}
+
+/* 故障效果 */
+body.glitch-active {
+  animation: glitch 0.5s ease-in-out;
+}
+
+@keyframes glitch {
+  0%, 100% {
+    filter: none;
+  }
+  20% {
+    filter: hue-rotate(90deg) brightness(1.2);
+    transform: translateX(-2px);
+  }
+  40% {
+    filter: hue-rotate(-90deg) brightness(0.8);
+    transform: translateX(2px);
+  }
+  60% {
+    filter: saturate(2) contrast(2);
+    transform: translateY(-2px);
+  }
+  80% {
+    filter: invert(0.2);
+    transform: translateY(2px);
+  }
+}
+
+/* 隐藏文字效果 */
+.hidden-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: #ffb6c1;
+  text-align: center;
+  pointer-events: none;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* 中央信封图标 */
+.central-envelope {
+  position: fixed;
+  top: -145%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 100;
+}
+
+.envelope-icon {
+  font-size: 60px;
+  display: block;
+  filter: drop-shadow(0 0 20px rgba(255, 182, 193, 0.8));
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.envelope-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(255, 182, 193, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+/* 调频反馈效果 */
+@keyframes radioBreathing {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.005);
+  }
+}
+
+@keyframes radioNoise {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes earthGlow {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.05);
+  }
+}
+
+.radio-breathing {
+  animation: radioBreathing 0.3s ease-out;
+}
+
+.radio-noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    rgba(255, 182, 193, 0.1) 1px,
+    rgba(255, 182, 193, 0.1) 2px
+  );
+  pointer-events: none;
+  animation: radioNoise 0.5s ease-out;
+}
+
+.radio-text-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: #ffb6c1;
+  text-align: center;
+  pointer-events: none;
+  z-index: 1001;
+  animation: textFadeIn 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+}
+
+@keyframes textFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* 内容卡片样式 */
+.content-card-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.content-card-small {
+  position: relative;
+  width: 350px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(20, 20, 20, 0.95);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  cursor: default;
+}
+
+.content-card-image-small {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.content-card-image-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* 中央图片显示 */
+.central-image {
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.frequency-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .radio-tuner {
+    width: 300px;
+    bottom: 20px;
+    padding: 15px;
+  }
+
+  .frequency-value {
+    font-size: 24px;
+  }
+
+  .waveform {
+    height: 30px;
+  }
+
+  .wave-bar {
+    width: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .radio-tuner {
+    width: 250px;
+  }
+
+  .frequency-value {
+    font-size: 20px;
+  }
+
+  .letter-indicator {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+}

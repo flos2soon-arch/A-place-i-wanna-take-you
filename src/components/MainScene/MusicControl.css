@@ -1,0 +1,102 @@
+/* MusicControl.css */
+.music-control {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 100;
+}
+
+.music-toggle {
+  width: 40px;
+  height: 40px;
+  background: rgba(10, 10, 10, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.music-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(234, 182, 255, 0.5);
+  transform: scale(1.1);
+}
+
+.music-toggle.playing {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.volume-container {
+  position: relative;
+}
+
+.volume-slider-wrapper {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(10, 10, 10, 0.9);
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.volume-slider {
+  width: 100px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: #ffbaff9c;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.8);
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: #ffb6c1;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .music-control {
+    top: 20px;
+    right: 20px;
+  }
+
+  .music-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .volume-slider {
+    width: 80px;
+  }
+}
