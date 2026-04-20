@@ -25,7 +25,7 @@ export const frequencyEvents = [
     type: "letter",
     tolerance: 0.02,
     displayType: "letterButton"
-  }
+  },
   {
     freq: 5.21,
     type: "image",
@@ -44,7 +44,7 @@ export const frequencyEvents = [
     tolerance: 0.05,
     src: "/assets/freq-10.00.jpg"
   },
-     {
+  {
     freq: 2.22,
     type: "image",
     tolerance: 0.05,
