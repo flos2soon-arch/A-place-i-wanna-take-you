@@ -364,7 +364,7 @@ body.glitch-active {
 }
 
 .frequency-image {
-  max-width: 130%;
+  max-width: 200%;
   max-height: 130%;
   object-fit: contain;
   border-radius: 8px;
