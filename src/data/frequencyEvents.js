@@ -44,4 +44,16 @@ export const frequencyEvents = [
     tolerance: 0.05,
     src: "/assets/freq-10.00.jpg"
   },
+     {
+    freq: 2.22,
+    type: "image",
+    tolerance: 0.05,
+    src: "/assets/freq-2.22.jpg"
+  },
+  {
+    freq: 7.05,
+    type: "image",
+    tolerance: 0.05,
+    src: "/assets/freq-7.05.jpg"
+  },
 ];
