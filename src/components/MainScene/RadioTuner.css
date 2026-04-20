@@ -357,15 +357,15 @@ body.glitch-active {
 .central-image {
   position: fixed;
   top: -100%;
-  left: 40%;
+  left: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
   pointer-events: none;
 }
 
 .frequency-image {
-  max-width: 200%;
-  max-height: 200%;
+  max-width: 150%;
+  max-height: 150%;
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
